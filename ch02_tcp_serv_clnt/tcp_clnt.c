@@ -41,7 +41,7 @@ int main(int argc, char *argv[]){
     printf("Function read call count :  %d \n", str_len);
     close(sock);
     return 0;
-
+    
 }
 
 void error_handling(char*message){
