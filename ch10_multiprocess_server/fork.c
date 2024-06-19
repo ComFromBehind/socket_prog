@@ -26,4 +26,4 @@ int main(int argc, char*argv[])
     return 0;
 }
 
-//이 코드에서 변수 pid값이 현재 실행중인 프로세스의 pid값이 아니다!! (의미 혼동 x)
+//이 코드에서 변수 pid값이 현재 실행중인 프로세스의 pid값이 아니다!! (의미)
