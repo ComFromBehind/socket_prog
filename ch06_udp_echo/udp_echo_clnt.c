@@ -12,6 +12,7 @@ int main(int argc, char *argv[])
 {
     int sock;
     char message[BUF_SIZE];
+    char message2[BUF_SIZE];
     int str_len;
     socklen_t adr_sz;
 
@@ -39,10 +40,12 @@ int main(int argc, char *argv[])
         
         sendto(sock, message, strlen(message), 0, (struct sockaddr*)&serv_adr, sizeof(serv_adr));
         adr_sz = sizeof(from_adr);
-        str_len = recvfrom(sock,message, BUF_SIZE, 0, (struct sockaddr*)&from_adr, &adr_sz);
+        message[0]= 0;
+        str_len = recvfrom(sock,message2, BUF_SIZE, 0, (struct sockaddr*)&from_adr, &adr_sz);
 
-        message[str_len] = 0;
-        printf("Message from server : %s",message);
+        message2[str_len] = 0;
+        printf("Message from server : %s",message2);
+        message2[0] = 0;
     }
     close(sock);
     return 0;

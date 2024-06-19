@@ -30,7 +30,7 @@ int main(int argc, char * argv[])
             if(WIFEXITED(status)){
                 printf("child send two : %d \n", WEXITSTATUS(status));
             }
-            sleep(30);
+            sleep(10);
         }
     }
     return 0;
