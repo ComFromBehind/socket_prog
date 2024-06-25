@@ -12,6 +12,7 @@ void error_handling(char*message);
 int main(int argc, char*argv[])
 {
     
+    char temp[BUF_SIZE];
     int send_sock;
     struct sockaddr_in mul_adr;
     int time_live = TTL;
@@ -38,6 +39,9 @@ int main(int argc, char*argv[])
         sendto(send_sock, buf, strlen(buf), 0, (struct sockaddr*)&mul_adr, sizeof(mul_adr));
         sleep(2);
     }
+    
+
+
     close(fp);
     close(send_sock);
     return 0;
